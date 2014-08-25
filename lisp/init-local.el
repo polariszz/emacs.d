@@ -34,17 +34,13 @@
 
 (global-set-key (kbd "C-M-g") 'goto-line)
 
-;(add-to-list 'load-path
-;              "~/.emacs.d/plugins/yasnippet/")
-;(require 'yasnippet)
-;(yas-global-mode 1)
-
-;(add-to-list 'yas/root-directory "~/.emacs.d/plugins/yasnippet-snippets")
-;(yas/initialize)
 ;(set-variable 'tab-width 4)
 ;(set-variable 'coffee-tab-width 4)
 
 ;set font
+
+(require-package 'yasnippet)
+(yas-global-mode 1)
 
 (defun set-font-courier ()
   (interactive)
@@ -67,6 +63,10 @@
 (global-set-key (kbd "C-M-r") 'tree-mode-reflesh)
 
 (global-set-key (kbd "M-W") 'ido-copy-current-word)
+
+;; toggle comment
+(global-set-key (kbd "C-c r") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-c b") 'comment-box)
 
 
 (provide 'init-local)
